@@ -1,0 +1,180 @@
+<div class="box center">
+  <ng-container *ngIf="offreFormGroup">
+    <ng-container *ngIf="state as data">
+      <ng-container *ngIf="data.dataState == OffresStateEnum.LOADING">
+        Loading....
+      </ng-container>
+      <ng-container *ngIf="data.dataState == OffresStateEnum.LOADED">
+        <table align="center">
+          <tr>
+            <th>
+              <h4>L'offre est ajouté <i class="fa fa-check"></i></h4>
+            </th>
+            <th>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                (click)="newOffre()"
+              >
+                Nouvelle Offre
+              </button>
+            </th>
+          </tr>
+        </table>
+      </ng-container>
+      <ng-container *ngIf="data.dataState == OffresStateEnum.NEW">
+        <form [formGroup]="offreFormGroup" (ngSubmit)="onSaveOffres()">
+          <h3 align="center">Ajouter une nouvelle offre</h3>
+          <div class="form-group">
+            <label for="v_depart">Ville de départ :</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Entrer la ville de départ"
+              formControlName="v_depart"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && offreFormGroup.controls.v_depart.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && offreFormGroup.controls.v_depart.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="offreFormGroup.controls.v_depart.errors.required">
+                Ville de départ est requise
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="v_arrive">Ville d'arrivée :</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Entrer la ville d'arrivée"
+              formControlName="v_arrive"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && offreFormGroup.controls.v_arrive.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && offreFormGroup.controls.v_arrive.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="offreFormGroup.controls.v_arrive.errors.required">
+                Ville d'arrivée est requise
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="date">Date :</label>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="Enter la Date"
+              formControlName="date"
+              [ngClass]="{
+                'is-invalid': submitted && offreFormGroup.controls.date.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && offreFormGroup.controls.date.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="offreFormGroup.controls.date.errors.required">
+                Date est requise
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Entrer le nom de l'employée"
+              formControlName="nom"
+              [ngClass]="{
+                'is-invalid': submitted && offreFormGroup.controls.nom.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && offreFormGroup.controls.nom.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="offreFormGroup.controls.nom.errors.required">
+                Nom est requis
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom :</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Entrer le prénom"
+              formControlName="prenom"
+              [ngClass]="{
+                'is-invalid': submitted && offreFormGroup.controls.prenom.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && offreFormGroup.controls.prenom.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="offreFormGroup.controls.prenom.errors.required">
+                Prénom est requis
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre :</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Entrer le Genre"
+              formControlName="genre"
+              [ngClass]="{
+                'is-invalid': submitted && offreFormGroup.controls.genre.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && offreFormGroup.controls.genre.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="offreFormGroup.controls.genre.errors.required">
+                Genre est requis
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="adressMail">Adresse Email :</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Entrer l'adresse email"
+              formControlName="adressMail"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && offreFormGroup.controls.adressMail.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && offreFormGroup.controls.adressMail.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="offreFormGroup.controls.adressMail.errors.required">
+                Adress Email est requis
+              </div>
+            </div>
+          </div>
+          <div align="center">
+            <button type="submit" class="btn btn-info">
+              Ajouter une offre
+            </button>
+          </div>
+        </form>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>

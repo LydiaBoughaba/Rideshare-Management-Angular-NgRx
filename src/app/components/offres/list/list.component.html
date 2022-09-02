@@ -1,0 +1,25 @@
+<div class="boxList">
+
+
+<table *ngIf="state" class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Proposé par</th>
+      <th>Genre</th>
+      <th>Ville de départ</th>
+      <th>Ville d'arrivée</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <app-item
+      *ngFor="let offres of state.offres"
+      [offres]="offres"
+      style="display: contents"
+    ></app-item>
+  </tbody>
+</table>
+</div>

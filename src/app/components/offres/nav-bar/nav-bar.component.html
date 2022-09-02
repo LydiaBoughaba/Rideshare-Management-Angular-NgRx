@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar navbar-nav">
+    <li>
+      <button (click)="onGetAllOffres()" class="btn btn-outline-info ml-2">
+        <span class="fa fa-list"></span> Liste des offres
+      </button>
+    </li>
+  </ul>
+  <ul class="navbar navbar-nav ml-auto">
+    <li>
+      <form #f="ngForm" (ngSubmit)="onSearch(f.value)" class="form-inline">
+        <input ngModel name="vDepart" type="text" class="form-control mr-1" placeholder="Ville de départ"/>
+        <input ngModel name="vArrivee" type="text" class="form-control mr-1" placeholder="Ville d'arrivée"/>
+        <input ngModel name="date" type="date" class="form-control mr-1" placeholder="Date"/>
+        <input ngModel name="mot" type="text" class="form-control" placeholder="Genre"/>
+        <button class="btn btn-outline-info ml-2">
+          <span class="fa fa-search"></span> Recherche
+        </button>
+      </form>
+    </li>
+  </ul>
+</nav>

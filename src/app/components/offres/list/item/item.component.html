@@ -1,0 +1,17 @@
+<tr *ngIf="offres">
+  <td>{{ offres.id }}</td>
+  <td>{{ offres.employe?.nom }} {{ offres.employe?.prenom }}</td>
+  <td>{{ offres.employe?.genre }}</td>
+  <td>{{ offres.v_depart }}</td>
+  <td>{{ offres.v_arrive }}</td>
+  <td>{{ offres.date }}</td>
+  <td>
+    <button class="btn btn-outline-primary ml-3" (click)="onEdit(offres)">
+      <span class="fa fa-edit"></span>
+    </button>
+    <button class="btn btn-outline-danger ml-3" (click)="onDelete(offres)">
+      <span class="fa fa-trash"></span>
+    </button> 
+  </td>
+  <td></td>
+</tr>

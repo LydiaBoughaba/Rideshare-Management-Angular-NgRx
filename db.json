@@ -1,0 +1,43 @@
+{
+  "offres": [
+    {
+      "id": 1,
+      "employe": {
+        "id": 1,
+        "nom": "Tchikou",
+        "prenom": "Lakhdar",
+        "genre": "A",
+        "adressMail": "aaa@gmail.com"
+      },
+      "v_depart": "Alger",
+      "v_arrive": "oran",
+      "date": "2021-05-01"
+    },
+    {
+      "id": 2,
+      "employe": {
+        "id": 2,
+        "nom": "Boughaba",
+        "prenom": "Lydia",
+        "genre": "B",
+        "adressMail": "bbb@gmail.com"
+      },
+      "v_depart": "Alger",
+      "v_arrive": "Tlemcen",
+      "date": "2021-05-05"
+    },
+    {
+      "id": 3,
+      "v_arrive": "Bejaia",
+      "v_depart": "Algerr",
+      "date": "2021-05-20",
+      "employe": {
+        "id": 1,
+        "nom": "Tchikou",
+        "prenom": "Lakhdar",
+        "genre": "A",
+        "adressMail": "aaa@gmail.com"
+      }
+    }
+  ]
+}

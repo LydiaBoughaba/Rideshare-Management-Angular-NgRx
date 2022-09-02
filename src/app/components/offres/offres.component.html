@@ -1,0 +1,25 @@
+<div class="p-4">
+  <app-nav-bar></app-nav-bar>
+  <ng-container
+    *ngIf="offresState$ | async as state"
+    [ngSwitch]="state.dataState"
+    class="p-4"
+  >
+    <ng-container *ngSwitchCase="OffresStateEnum.INITIAL"> </ng-container>
+    <ng-container *ngSwitchCase="OffresStateEnum.LOADING">
+      <div class="p-2">Loading....</div>
+    </ng-container>
+    <ng-container *ngSwitchCase="OffresStateEnum.ERROR">
+      <div class="p-2 text-danger">{{ state.errorMessage | json }}</div>
+    </ng-container>
+    <ng-container *ngSwitchCase="OffresStateEnum.LOADED">
+      <app-list [state]="state"></app-list>
+    </ng-container>
+  </ng-container>
+  <div align="center">
+    <button (click)="onNewOffres()" class="btn btn-outline-info ml-2 my-md-5">
+      <span class="fa fa-plus"></span> Une nouvelle offre 
+    </button>
+  </div>
+  
+</div>
